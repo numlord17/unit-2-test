@@ -3,7 +3,7 @@ public class KillCilantro
    
    public static void main(String[] args)
    {
-      System.out.print(killCilantro("cilanro123"));
+         System.out.print(killCilantro("cilantro this is a cilantro example"));
    }
    
    
@@ -11,22 +11,19 @@ public class KillCilantro
    {
       String replacement = "parsley";
       String search = "cilantro";
-      String newInput;
-      int searchIndex = input.indexOf(search);
-      //System.out.print(searchIndex);
-      if (searchIndex > 0)
+      String returnString = "";
+      if (input.indexOf(search) < 0)
       {
-         newInput = input.substring(0,searchIndex) + replacement + input.substring(searchIndex + search.length());
-         return newInput;
+         returnString += input.substring(0,input.indexOf(search)) + replacement + input.substring(input.indexOf(search) + search.length());
       }
-      else if (searchIndex == 0)
+      else if (input.indexOf(search) == 0)
       {
-         newInput = replacement + input.substring(searchIndex + search.length());
-         return newInput;
+         returnString += replacement + input.substring(input.indexOf(search) + search.length());
       }
       else
       {
-         return input;
+         returnString = input;
       }
+      return returnString;
    }
 }
